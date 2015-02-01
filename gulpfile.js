@@ -3,17 +3,9 @@ var del = require('del');
 var connect = require('gulp-connect');
 var browserify = require('gulp-browserify');
 var concat = require('gulp-concat');
-var react = require('gulp-react');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
-
-gulp.task('react', function() {
-  return gulp.src('./src/js/**/*.jsx')
-    .pipe(react())
-    //.pipe(concat('all.js'))
-    .pipe(gulp.dest('dist/js'));
-});
 
 gulp.task('browserify', function() {
   gulp.src('src/js/router.js')
@@ -34,15 +26,9 @@ gulp.task('copy', function() {
     .pipe(reload({
       stream: true
     }));
-
-  // gulp.src('src/**/*.js')
-  //   .pipe(gulp.dest('dist'))
-  //   .pipe(reload({
-  //     stream: true
-  //   }));
 });
 
-gulp.task('server', ['clean', 'copy', 'react'], function() {
+gulp.task('server', ['clean', 'copy'], function() {
   runSequence('browserify', 'connect');
 });
 
