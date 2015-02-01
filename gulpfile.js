@@ -12,7 +12,7 @@ gulp.task('browserify', function() {
     .pipe(browserify({
       transform: 'reactify'
     }))
-    .pipe(concat('router.js'))
+    .pipe(concat('app.js'))
     .pipe(gulp.dest('dist/js'))
     .pipe(reload({
       stream: true
@@ -32,7 +32,7 @@ gulp.task('server', ['clean', 'copy'], function() {
   runSequence('browserify', 'connect');
 });
 
-gulp.task('browser-sync', ['watch'], function() {
+gulp.task('bs', ['watch'], function() {
   browserSync({
     server: {
       baseDir: [__dirname] + '/dist'
