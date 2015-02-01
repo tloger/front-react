@@ -188,5 +188,5 @@ var routes = (
 );
 
 Router.run(routes, function (Handler) {
-  React.render(<Handler/>, document.getElementById('example'));
+  React.render(<Handler/>, document.getElementById('app'));
 });
