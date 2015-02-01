@@ -29,6 +29,13 @@ gulp.task('copy', function() {
       stream: true
     }))
     .pipe(livereload());
+
+  gulp.src('src/bower_components/**/*')
+    .pipe(gulp.dest('dist/bower_components'))
+    .pipe(reload({
+      stream: true
+    }))
+    .pipe(livereload());    
 });
 
 gulp.task('server', ['clean', 'copy'], function() {
