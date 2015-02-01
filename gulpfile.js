@@ -11,20 +11,22 @@ var reload = browserSync.reload;
 gulp.task('react', function() {
   return gulp.src('./src/js/**/*.jsx')
     .pipe(react())
+    //.pipe(concat('all.js'))
     .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('browserify', function() {
-  gulp.src('dist/js/**/*.js')
+  gulp.src('src/js/router.js')
     .pipe(browserify({
-      insertGlobals: true,
-      debug: true
+      transform: 'reactify'
     }))
+    .pipe(concat('router.js'))
     .pipe(gulp.dest('dist/js'))
     .pipe(reload({
       stream: true
     }));
 });
+
 
 gulp.task('copy', function() {
   gulp.src('src/**/*.html')
@@ -32,6 +34,12 @@ gulp.task('copy', function() {
     .pipe(reload({
       stream: true
     }));
+
+  // gulp.src('src/**/*.js')
+  //   .pipe(gulp.dest('dist'))
+  //   .pipe(reload({
+  //     stream: true
+  //   }));
 });
 
 gulp.task('server', ['clean', 'copy', 'react'], function() {
@@ -47,14 +55,13 @@ gulp.task('browser-sync', ['watch'], function() {
 });
 
 gulp.task('build', function() {
-  runSequence('clean', 'copy', 'react', 'browserify');
+  runSequence('clean', 'copy', 'browserify');
 });
 
 gulp.task('watch', function() {
   gulp.watch('src/**/*.html', ['copy']);
-  gulp.watch('src/js/**/*.jsx').on('change', function(file) {
-    runSequence('react', 'browserify');
-  });
+  gulp.watch('src/js/**/*.js', ['browserify']);
+  gulp.watch('src/js/**/*.jsx', ['browserify']);
 });
 
 gulp.task('connect', function() {
