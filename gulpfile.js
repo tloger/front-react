@@ -1,8 +1,12 @@
 var gulp = require('gulp');
+var del = require('del');
+var connect = require('gulp-connect');
 var browserify = require('gulp-browserify');
 var concat = require('gulp-concat');
 var react = require('gulp-react');
 var runSequence = require('run-sequence');
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
 
 gulp.task('react', function() {
   return gulp.src('./src/js/**/*.jsx')
@@ -16,25 +20,42 @@ gulp.task('browserify', function() {
       insertGlobals: true,
       debug: true
     }))
-    .pipe(gulp.dest('dist/js'));
+    .pipe(gulp.dest('dist/js'))
+    .pipe(reload({
+      stream: true
+    }));
 });
 
 gulp.task('copy', function() {
-  gulp.src('src/index.html')
-    .pipe(gulp.dest('dist'));
+  gulp.src('src/**/*.html')
+    .pipe(gulp.dest('dist'))
+    .pipe(reload({
+      stream: true
+    }));
 });
 
-gulp.task('default', ['clean'], function() {
-  runSequence('react', 'browserify', 'copy', 'connect');
+gulp.task('server', ['clean', 'copy', 'react'], function() {
+  runSequence('browserify', 'connect');
+});
+
+gulp.task('browser-sync', ['watch'], function() {
+  browserSync({
+    server: {
+      baseDir: [__dirname] + '/dist'
+    }
+  });
+});
+
+gulp.task('build', function() {
+  runSequence('clean', 'copy', 'react', 'browserify');
 });
 
 gulp.task('watch', function() {
-  gulp.watch('src/**/*.*', ['default']);
+  gulp.watch('src/**/*.html', ['copy']);
+  gulp.watch('src/js/**/*.jsx').on('change', function(file) {
+    runSequence('react', 'browserify');
+  });
 });
-
-
-var del = require('del');
-var connect = require('gulp-connect');
 
 gulp.task('connect', function() {
   connect.server({
