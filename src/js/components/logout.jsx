@@ -1,5 +1,6 @@
 /** @jsx React.DOM */
 var React = require('react');
+var auth = require('../libs/auth');
 
 var Logout = React.createClass({
   componentDidMount: function () {
