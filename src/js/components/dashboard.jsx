@@ -1,5 +1,7 @@
 /** @jsx React.DOM */
 var React = require('react');
+var auth = require('../libs/auth');
+var Login = require('../components/login.jsx');
 
 var Authentication = {
   statics: {

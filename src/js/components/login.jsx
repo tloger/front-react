@@ -1,6 +1,7 @@
 /** @jsx React.DOM */
 var React = require('react');
 var Router = require('react-router');
+var auth = require('../libs/auth');
 
 var Login = React.createClass({
   mixins: [ Router.Navigation ],
