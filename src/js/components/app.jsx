@@ -31,6 +31,12 @@ var App = React.createClass({
       <div>
         <ul>
           <li>{loginOrOut}</li>
+
+          <li><Link to="clients">Clients</Link></li>
+          <li><Link to="projects">Projects</Link></li>
+          <li><Link to="tasks">Tasks</Link></li>
+          <li><Link to="tasklogs">TaskLogs</Link></li>
+
           <li><Link to="about">About</Link></li>
           <li><Link to="header">Header</Link></li>
           <li><Link to="dashboard">Dashboard</Link> (authenticated)</li>

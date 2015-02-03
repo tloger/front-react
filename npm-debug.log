@@ -1,183 +1,121 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'jsxhint' ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'reflux', '--save' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.33
-4 verbose cache add [ 'jsxhint', null ]
-5 verbose cache add name=undefined spec="jsxhint" args=["jsxhint",null]
-6 verbose parsed url { protocol: null,
-6 verbose parsed url   slashes: null,
-6 verbose parsed url   auth: null,
-6 verbose parsed url   host: null,
-6 verbose parsed url   port: null,
-6 verbose parsed url   hostname: null,
-6 verbose parsed url   hash: null,
-6 verbose parsed url   search: null,
-6 verbose parsed url   query: null,
-6 verbose parsed url   pathname: 'jsxhint',
-6 verbose parsed url   path: 'jsxhint',
-6 verbose parsed url   href: 'jsxhint' }
-7 silly lockFile 0888e6f7-jsxhint jsxhint
-8 verbose lock jsxhint /Users/sumitarora/.npm/0888e6f7-jsxhint.lock
-9 silly lockFile 0888e6f7-jsxhint jsxhint
-10 silly lockFile 0888e6f7-jsxhint jsxhint
-11 verbose addNamed [ 'jsxhint', '' ]
-12 verbose addNamed [ null, '*' ]
-13 silly lockFile b4db1bb5-jsxhint jsxhint@
-14 verbose lock jsxhint@ /Users/sumitarora/.npm/b4db1bb5-jsxhint.lock
-15 silly addNameRange { name: 'jsxhint', range: '*', hasData: false }
-16 verbose request where is /jsxhint
-17 verbose request registry https://registry.npmjs.org/
-18 verbose request id a831ea055cbd3cd6
-19 verbose url raw /jsxhint
-20 verbose url resolving [ 'https://registry.npmjs.org/', './jsxhint' ]
-21 verbose url resolved https://registry.npmjs.org/jsxhint
-22 verbose request where is https://registry.npmjs.org/jsxhint
-23 info trying registry request attempt 1 at 15:19:04
-24 http GET https://registry.npmjs.org/jsxhint
-25 http 200 https://registry.npmjs.org/jsxhint
-26 silly registry.get cb [ 200,
-26 silly registry.get   { date: 'Sun, 01 Feb 2015 20:19:06 GMT',
-26 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-26 silly registry.get     etag: '"D1LZSQ3OM9XEMWPBI4S9JL13B"',
-26 silly registry.get     'content-type': 'application/json',
-26 silly registry.get     'cache-control': 'max-age=60',
-26 silly registry.get     'content-length': '42175',
-26 silly registry.get     'accept-ranges': 'bytes',
-26 silly registry.get     via: '1.1 varnish',
-26 silly registry.get     age: '0',
-26 silly registry.get     'x-served-by': 'cache-ord1735-ORD',
-26 silly registry.get     'x-cache': 'MISS',
-26 silly registry.get     'x-cache-hits': '0',
-26 silly registry.get     'x-timer': 'S1422821946.498605,VS0,VE388',
-26 silly registry.get     vary: 'Accept',
-26 silly registry.get     'keep-alive': 'timeout=10, max=50',
-26 silly registry.get     connection: 'Keep-Alive' } ]
-27 silly addNameRange number 2 { name: 'jsxhint', range: '*', hasData: true }
-28 silly addNameRange versions [ 'jsxhint',
-28 silly addNameRange   [ '0.0.1',
-28 silly addNameRange     '0.1.0',
-28 silly addNameRange     '0.2.0',
-28 silly addNameRange     '0.3.0',
-28 silly addNameRange     '0.3.1',
-28 silly addNameRange     '0.3.2',
-28 silly addNameRange     '0.4.1',
-28 silly addNameRange     '0.4.2',
-28 silly addNameRange     '0.4.3',
-28 silly addNameRange     '0.4.4',
-28 silly addNameRange     '0.4.6',
-28 silly addNameRange     '0.4.5',
-28 silly addNameRange     '0.4.7',
-28 silly addNameRange     '0.4.8',
-28 silly addNameRange     '0.4.9',
-28 silly addNameRange     '0.4.10',
-28 silly addNameRange     '0.4.11',
-28 silly addNameRange     '0.4.12',
-28 silly addNameRange     '0.4.13',
-28 silly addNameRange     '0.4.14',
-28 silly addNameRange     '0.4.15',
-28 silly addNameRange     '0.5.0',
-28 silly addNameRange     '0.5.1',
-28 silly addNameRange     '0.6.0',
-28 silly addNameRange     '0.7.0',
-28 silly addNameRange     '0.8.0',
-28 silly addNameRange     '0.7.1',
-28 silly addNameRange     '0.8.1',
-28 silly addNameRange     '0.9.0' ] ]
-29 verbose addNamed [ 'jsxhint', '0.9.0' ]
-30 verbose addNamed [ '0.9.0', '0.9.0' ]
-31 silly lockFile da747aa5-jsxhint-0-9-0 jsxhint@0.9.0
-32 verbose lock jsxhint@0.9.0 /Users/sumitarora/.npm/da747aa5-jsxhint-0-9-0.lock
-33 silly lockFile 62cfaa35-js-org-jsxhint-jsxhint-0-9-0-tgz https://registry.npmjs.org/jsxhint/-/jsxhint-0.9.0.tgz
-34 verbose lock https://registry.npmjs.org/jsxhint/-/jsxhint-0.9.0.tgz /Users/sumitarora/.npm/62cfaa35-js-org-jsxhint-jsxhint-0-9-0-tgz.lock
-35 verbose addRemoteTarball [ 'https://registry.npmjs.org/jsxhint/-/jsxhint-0.9.0.tgz',
-35 verbose addRemoteTarball   '862a6e1917a3ef1617273f2cfb063805e95bdd73' ]
-36 info retry fetch attempt 1 at 15:19:07
-37 verbose fetch to= /var/folders/5x/3ffjzfh50m168jpvbyswxhkr0000gn/T/npm-76694-dDpoxACx/registry.npmjs.org/jsxhint/-/jsxhint-0.9.0.tgz
-38 http GET https://registry.npmjs.org/jsxhint/-/jsxhint-0.9.0.tgz
-39 http 200 https://registry.npmjs.org/jsxhint/-/jsxhint-0.9.0.tgz
-40 silly lockFile 62cfaa35-js-org-jsxhint-jsxhint-0-9-0-tgz https://registry.npmjs.org/jsxhint/-/jsxhint-0.9.0.tgz
-41 silly lockFile 62cfaa35-js-org-jsxhint-jsxhint-0-9-0-tgz https://registry.npmjs.org/jsxhint/-/jsxhint-0.9.0.tgz
-42 silly lockFile da747aa5-jsxhint-0-9-0 jsxhint@0.9.0
-43 silly lockFile da747aa5-jsxhint-0-9-0 jsxhint@0.9.0
-44 silly lockFile b4db1bb5-jsxhint jsxhint@
-45 silly lockFile b4db1bb5-jsxhint jsxhint@
-46 silly resolved [ { name: 'jsxhint',
-46 silly resolved     version: '0.9.0',
-46 silly resolved     description: 'Wrapper for JSHint to allow hinting of JSX files',
-46 silly resolved     main: 'jsxhint.js',
-46 silly resolved     bin: { jsxhint: './cli.js' },
-46 silly resolved     engine: 'node >= 0.10',
-46 silly resolved     scripts:
-46 silly resolved      { test: 'node ./node_modules/tap/bin/tap test/test.js',
-46 silly resolved        lint: 'jshint' },
-46 silly resolved     repository: { type: 'git', url: 'https://github.com/STRML/JSXHint' },
-46 silly resolved     directories: { test: 'test' },
-46 silly resolved     prefer_global: true,
-46 silly resolved     keywords: [ 'jshint', 'jsx', 'react', 'lint', 'jslint', 'reactjs' ],
-46 silly resolved     author: { name: 'Samuel Reed' },
-46 silly resolved     contributors: [ [Object] ],
-46 silly resolved     license: 'MIT',
-46 silly resolved     dependencies:
-46 silly resolved      { async: '~0.9.0',
-46 silly resolved        debug: '~2.1.0',
-46 silly resolved        extend: '^2.0.0',
-46 silly resolved        'graceful-fs': '~3.0.5',
-46 silly resolved        jshint: '~2.5.10',
-46 silly resolved        jstransform: '~8.2.0',
-46 silly resolved        mkdirp: '~0.5.0',
-46 silly resolved        'react-tools': '^0.12.1',
-46 silly resolved        rimraf: '~2.2.8',
-46 silly resolved        through: '~2.3.6' },
-46 silly resolved     devDependencies: { '6to5': '^1.14.6', tap: '~0.4.13', 'precommit-hook': '~1.0.7' },
-46 silly resolved     publishConfig: { registry: 'https://registry.npmjs.org' },
-46 silly resolved     gitHead: '61f32b9298d27a2227a2b02c05d800fafabc0b08',
-46 silly resolved     bugs: { url: 'https://github.com/STRML/JSXHint/issues' },
-46 silly resolved     homepage: 'https://github.com/STRML/JSXHint',
-46 silly resolved     _id: 'jsxhint@0.9.0',
-46 silly resolved     _shasum: '862a6e1917a3ef1617273f2cfb063805e95bdd73',
-46 silly resolved     _from: 'jsxhint@',
-46 silly resolved     _npmVersion: '1.4.28',
-46 silly resolved     _npmUser: { name: 'strml', email: 'samuel.trace.reed@gmail.com' },
-46 silly resolved     maintainers: [ [Object] ],
-46 silly resolved     dist:
-46 silly resolved      { shasum: '862a6e1917a3ef1617273f2cfb063805e95bdd73',
-46 silly resolved        tarball: 'http://registry.npmjs.org/jsxhint/-/jsxhint-0.9.0.tgz' },
-46 silly resolved     _resolved: 'https://registry.npmjs.org/jsxhint/-/jsxhint-0.9.0.tgz' } ]
-47 info install jsxhint@0.9.0 into /usr/local/lib
-48 info installOne jsxhint@0.9.0
-49 verbose lib/node_modules/jsxhint unbuild
-50 verbose tar unpack /Users/sumitarora/.npm/jsxhint/0.9.0/package.tgz
-51 silly lockFile eeaf71d3-r-local-lib-node-modules-jsxhint tar:///usr/local/lib/node_modules/jsxhint
-52 verbose lock tar:///usr/local/lib/node_modules/jsxhint /Users/sumitarora/.npm/eeaf71d3-r-local-lib-node-modules-jsxhint.lock
-53 silly lockFile 135307e4-ra-npm-jsxhint-0-9-0-package-tgz tar:///Users/sumitarora/.npm/jsxhint/0.9.0/package.tgz
-54 verbose lock tar:///Users/sumitarora/.npm/jsxhint/0.9.0/package.tgz /Users/sumitarora/.npm/135307e4-ra-npm-jsxhint-0-9-0-package-tgz.lock
-55 silly gunzTarPerm modes [ '755', '644' ]
-56 error Error: EACCES, mkdir '/usr/local/lib/node_modules/jsxhint'
-56 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/jsxhint']
-56 error   errno: 3,
-56 error   code: 'EACCES',
-56 error   path: '/usr/local/lib/node_modules/jsxhint',
-56 error   fstream_type: 'Directory',
-56 error   fstream_path: '/usr/local/lib/node_modules/jsxhint',
-56 error   fstream_class: 'DirWriter',
-56 error   fstream_stack:
-56 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
-56 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
-56 error      'Object.oncomplete (fs.js:107:15)' ] }
-57 error Please try running this command again as root/Administrator.
-58 error System Darwin 14.0.0
-59 error command "node" "/usr/local/bin/npm" "install" "-g" "jsxhint"
-60 error cwd /Users/sumitarora/workspace/sumit/tt/front-react
-61 error node -v v0.10.33
-62 error npm -v 1.4.28
-63 error path /usr/local/lib/node_modules/jsxhint
-64 error fstream_path /usr/local/lib/node_modules/jsxhint
-65 error fstream_type Directory
-66 error fstream_class DirWriter
-67 error code EACCES
-68 error errno 3
-69 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/jsxhint'
-70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
-70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
-70 error fstream_stack Object.oncomplete (fs.js:107:15)
-71 verbose exit [ 3, true ]
+4 warn package.json flux@0.0.0 No description
+5 warn package.json flux@0.0.0 No repository field.
+6 warn package.json flux@0.0.0 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'reflux', null ]
+9 verbose cache add name=undefined spec="reflux" args=["reflux",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'reflux',
+10 verbose parsed url   path: 'reflux',
+10 verbose parsed url   href: 'reflux' }
+11 silly lockFile 84694884-reflux reflux
+12 verbose lock reflux /Users/sumitarora/.npm/84694884-reflux.lock
+13 silly lockFile 84694884-reflux reflux
+14 silly lockFile 84694884-reflux reflux
+15 verbose addNamed [ 'reflux', '' ]
+16 verbose addNamed [ null, '*' ]
+17 silly lockFile 1a0ba0e2-reflux reflux@
+18 verbose lock reflux@ /Users/sumitarora/.npm/1a0ba0e2-reflux.lock
+19 silly addNameRange { name: 'reflux', range: '*', hasData: false }
+20 verbose request where is /reflux
+21 verbose request registry https://registry.npmjs.org/
+22 verbose request id 09f4a75c1500efab
+23 verbose url raw /reflux
+24 verbose url resolving [ 'https://registry.npmjs.org/', './reflux' ]
+25 verbose url resolved https://registry.npmjs.org/reflux
+26 verbose request where is https://registry.npmjs.org/reflux
+27 info trying registry request attempt 1 at 13:36:09
+28 verbose etag "98RFVZNFIAKS5OSOT9M90LRBC"
+29 http GET https://registry.npmjs.org/reflux
+30 http 200 https://registry.npmjs.org/reflux
+31 silly registry.get cb [ 200,
+31 silly registry.get   { date: 'Mon, 02 Feb 2015 18:36:08 GMT',
+31 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+31 silly registry.get     etag: '"3UOS567506TZVY8V7MVIBISMD"',
+31 silly registry.get     'content-type': 'application/json',
+31 silly registry.get     'cache-control': 'max-age=60',
+31 silly registry.get     'content-length': '64998',
+31 silly registry.get     'accept-ranges': 'bytes',
+31 silly registry.get     via: '1.1 varnish',
+31 silly registry.get     age: '0',
+31 silly registry.get     'x-served-by': 'cache-iad2131-IAD',
+31 silly registry.get     'x-cache': 'HIT',
+31 silly registry.get     'x-cache-hits': '1',
+31 silly registry.get     'x-timer': 'S1422902168.586533,VS0,VE10',
+31 silly registry.get     vary: 'Accept',
+31 silly registry.get     'keep-alive': 'timeout=10, max=50',
+31 silly registry.get     connection: 'Keep-Alive' } ]
+32 silly addNameRange number 2 { name: 'reflux', range: '*', hasData: true }
+33 silly addNameRange versions [ 'reflux',
+33 silly addNameRange   [ '0.0.1',
+33 silly addNameRange     '0.0.2',
+33 silly addNameRange     '0.0.3',
+33 silly addNameRange     '0.0.4',
+33 silly addNameRange     '0.1.0',
+33 silly addNameRange     '0.1.1',
+33 silly addNameRange     '0.1.2',
+33 silly addNameRange     '0.1.3',
+33 silly addNameRange     '0.1.4',
+33 silly addNameRange     '0.1.5',
+33 silly addNameRange     '0.1.6',
+33 silly addNameRange     '0.1.7',
+33 silly addNameRange     '0.1.8',
+33 silly addNameRange     '0.1.9',
+33 silly addNameRange     '0.1.10',
+33 silly addNameRange     '0.1.11',
+33 silly addNameRange     '0.1.12',
+33 silly addNameRange     '0.1.13',
+33 silly addNameRange     '0.1.14',
+33 silly addNameRange     '0.1.15',
+33 silly addNameRange     '0.2.0',
+33 silly addNameRange     '0.2.1',
+33 silly addNameRange     '0.2.2',
+33 silly addNameRange     '0.2.3',
+33 silly addNameRange     '0.2.4' ] ]
+34 verbose addNamed [ 'reflux', '0.2.4' ]
+35 verbose addNamed [ '0.2.4', '0.2.4' ]
+36 silly lockFile 37854086-reflux-0-2-4 reflux@0.2.4
+37 verbose lock reflux@0.2.4 /Users/sumitarora/.npm/37854086-reflux-0-2-4.lock
+38 silly lockFile 8908a172-pmjs-org-reflux-reflux-0-2-4-tgz https://registry.npmjs.org/reflux/-/reflux-0.2.4.tgz
+39 verbose lock https://registry.npmjs.org/reflux/-/reflux-0.2.4.tgz /Users/sumitarora/.npm/8908a172-pmjs-org-reflux-reflux-0-2-4-tgz.lock
+40 verbose addRemoteTarball [ 'https://registry.npmjs.org/reflux/-/reflux-0.2.4.tgz',
+40 verbose addRemoteTarball   '1b59e2f24f7695fe56b06479894ee28b33c6dc92' ]
+41 info retry fetch attempt 1 at 13:36:10
+42 verbose fetch to= /var/folders/5x/3ffjzfh50m168jpvbyswxhkr0000gn/T/npm-87886-AYtjTvid/registry.npmjs.org/reflux/-/reflux-0.2.4.tgz
+43 http GET https://registry.npmjs.org/reflux/-/reflux-0.2.4.tgz
+44 http 200 https://registry.npmjs.org/reflux/-/reflux-0.2.4.tgz
+45 silly lockFile 8908a172-pmjs-org-reflux-reflux-0-2-4-tgz https://registry.npmjs.org/reflux/-/reflux-0.2.4.tgz
+46 silly lockFile 8908a172-pmjs-org-reflux-reflux-0-2-4-tgz https://registry.npmjs.org/reflux/-/reflux-0.2.4.tgz
+47 silly lockFile 37854086-reflux-0-2-4 reflux@0.2.4
+48 silly lockFile 37854086-reflux-0-2-4 reflux@0.2.4
+49 silly lockFile 1a0ba0e2-reflux reflux@
+50 silly lockFile 1a0ba0e2-reflux reflux@
+51 error Error: EACCES, mkdir '/Users/sumitarora/.npm/reflux/0.2.4'
+51 error  { [Error: EACCES, mkdir '/Users/sumitarora/.npm/reflux/0.2.4']
+51 error   errno: 3,
+51 error   code: 'EACCES',
+51 error   path: '/Users/sumitarora/.npm/reflux/0.2.4',
+51 error   parent: 'flux' }
+52 error Please try running this command again as root/Administrator.
+53 error System Darwin 14.0.0
+54 error command "node" "/usr/local/bin/npm" "install" "reflux" "--save"
+55 error cwd /Users/sumitarora/workspace/sumit/tt/front-react
+56 error node -v v0.10.33
+57 error npm -v 1.4.28
+58 error path /Users/sumitarora/.npm/reflux/0.2.4
+59 error code EACCES
+60 error errno 3
+61 error stack Error: EACCES, mkdir '/Users/sumitarora/.npm/reflux/0.2.4'
+62 verbose exit [ 3, true ]
