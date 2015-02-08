@@ -5,44 +5,50 @@ var clientStore = require('../stores/client-store');
 var Reactable = require('Reactable');
 var Table = Reactable.Table;
 
-// var ProductRow = React.createClass({
-//     render: function() {
-//         return (
-//             <tr>
-//                 <td>{this.props.product.fname}</td>
-//                 <td>{this.props.product.lname}</td>
-//             </tr>
-//         );
-//     }
-// });
+var ClientRow = React.createClass({
+    render: function() {
+        return (
+            <tr>
+                <td>{this.props.client.name}</td>
+                <td>
+                  <button className='btn btn-primary btn-sm'>Edit</button>
+                  &nbsp;&nbsp;
+                  <button className='btn btn-danger btn-sm'>Delete</button>
+                </td>
+            </tr>
+        );
+    }
+});
 
-// var ProductTable = React.createClass({
-//     render: function() {
-//         var rows = [];
-//         this.props.products.forEach(function(product) {
-//             rows.push(<ProductRow product={product} key={product.fname} />);
-//         });
-//         return (
-//             <table>
-//                 <thead>
-//                     <tr>
-//                         <th>Name</th>
-//                         <th>Price</th>
-//                     </tr>
-//                 </thead>
-//                 <tbody>{rows}</tbody>
-//             </table>
-//         );
-//     }
-// });
+var ClientsTable = React.createClass({
+    render: function() {
+        var rows = [];
+        this.props.clients.forEach(function(client) {
+            rows.push(<ClientRow client={client} key={client.name} />);
+        });
+        return (
+            <table className="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>{rows}</tbody>
+            </table>
+        );
+    }
+});
 
 var Client = React.createClass({
   render: function() {
     return (
-      <input type="text" />
-      <button />
-      // <button>Save</ button>
-      // <button>Cancel</ button>
+      <div className='form-inline'>
+        <input type="text" className="form-control" placeholder='Client Name' />
+        <button className='btn btn-success btn-sm'>Save</button>
+         &nbsp;&nbsp;
+         <button className='btn btn-danger btn-sm'>Cancel</button>        
+      </div>
     );
   }
 })
@@ -69,7 +75,8 @@ var Component =
         return (
             <div>
               <Client />
-              <Table className="table" data={this.state.clients} />
+              <br/><br/>
+              <ClientsTable clients={this.state.clients} />
             </div>
         )
     }

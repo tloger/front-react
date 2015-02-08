@@ -11,7 +11,7 @@ var clientStore = Reflux.createStore({
 
   getAllClients: function() {
     var self = this;
-    api.doGet('projects').then(function(result){
+    api.doGet('clients').then(function(result) {
       self.trigger(result);
     });
   }

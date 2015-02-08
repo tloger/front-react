@@ -15,9 +15,6 @@ var DefaultRoute = Router.DefaultRoute;
 var Link = Router.Link;
 var RouteHandler = Router.RouteHandler;
 
-//var api = require('./libs/api');
-//api.doGet('https://gist.githubusercontent.com/sumitarora/738f781675b961d77d71/raw/6b994a695fd235115a6039ecacfb03e5ff4112d5/gistfile1.json');
-
 var routes = (
   <Route handler={App}>
     <Route name="header" handler={Header}/>

@@ -20,15 +20,17 @@ var api = {
   },
 
   doPost: function(url, data) {
+    var deferred = q.defer();
     request
       .post(config.API_HOST + url)
       .send(data)
       .set('Accept', 'application/json')
       .end(function(res) {
         if (res.ok) {
-          console.log('yay got ' + JSON.stringify(res.body));
+          console.log('result from get: ', JSON.parse(res.text));
+          deferred.resolve(JSON.parse(res.text));
         } else {
-          console.log('Oh no! error ' + res.text);
+          deferred.reject('error');
         }
       });
   }
