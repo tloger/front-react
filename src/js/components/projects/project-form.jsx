@@ -1,11 +1,11 @@
 /** @jsx React.DOM */
 var React = require('react');
 
-var Client = React.createClass({
+var ProjectForm = React.createClass({
   render: function() {
     return (
       <div className='form-inline'>
-        <input type="text" className="form-control" placeholder='Client Name' />
+        <input type="text" className="form-control" placeholder='Project Name' />
         <button className='btn btn-success btn-sm'>Save</button>
          &nbsp;&nbsp;
          <button className='btn btn-danger btn-sm'>Cancel</button>        
@@ -14,4 +14,4 @@ var Client = React.createClass({
   }
 });
 
-module.exports = Client;
+module.exports = ProjectForm;

@@ -1,11 +1,11 @@
 /** @jsx React.DOM */
 var React = require('react');
 
-var ClientRow = React.createClass({
+var ProjectRow = React.createClass({
     render: function() {
         return (
             <tr>
-                <td>{this.props.client.name}</td>
+                <td>{this.props.project.name}</td>
                 <td>
                   <button className='btn btn-primary btn-sm'>Edit</button>
                   &nbsp;&nbsp;
@@ -16,4 +16,4 @@ var ClientRow = React.createClass({
     }
 });
 
-module.exports = ClientRow;
+module.exports = ProjectRow;

@@ -1,34 +1,34 @@
 /** @jsx React.DOM */
 var React = require('react');
 var appActions = require('../../actions');
-var ClientStore = require('../../stores/client-store');
-var ClientsTable = require('./clients-table.jsx');
-var ClientForm = require('./client-form.jsx');
+var ProjectStore = require('../../stores/project-store');
+var ProjectsTable = require('./projects-table.jsx');
+var ProjectForm = require('./project-form.jsx');
 
 var Component =
   React.createClass({
       componentDidMount: function() {
-          appActions.getAllClients();
-          this.unsubscribe = ClientStore.listen(this.fetchedClientsList);
+          appActions.getAllProjects();
+          this.unsubscribe = ProjectStore.listen(this.fetchedProjectsList);
       },
-      fetchedClientsList: function(result) {
+      fetchedProjectsList: function(result) {
         this.setState({
-          clients: result.data
+          projects: result.data
         });
       },
       componentWillUnmount: function() {
           this.unsubscribe();
       },
       getInitialState: function() {
-        return {clients: []};
+        return {projects: []};
       },
 
       render: function() {
         return (
             <div>
-              <ClientForm />
+              <ProjectForm />
               <br/><br/>
-              <ClientsTable clients={this.state.clients} />
+              <ProjectsTable projects={this.state.projects} />
             </div>
         )
     }

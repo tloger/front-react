@@ -1,7 +1,8 @@
 var Reflux = require('reflux')
 
 var appActions = Reflux.createActions([
-  'getAllClients'
+  'getAllClients',
+  'getAllProjects'
 ])
 
 module.exports = appActions;
