@@ -8,7 +8,8 @@ var Dashboard = require('./components/dashboard.jsx');
 var Login = require('./components/login.jsx');
 var About = require('./components/about.jsx');
 var Logout = require('./components/logout.jsx');
-var ClientsList = require('./components/clients-list.jsx');
+var Clients = require('./components/clients/clients.jsx');
+var Projects = require('./components/projects/projects.jsx');
 
 var Route = Router.Route;
 var DefaultRoute = Router.DefaultRoute;
@@ -19,8 +20,8 @@ var routes = (
   <Route handler={App}>
     <Route name="header" handler={Header}/>
     
-    <Route name="clients" handler={ClientsList}/>
-    <Route name="projects" handler={Header}/>
+    <Route name="clients" handler={Clients}/>
+    <Route name="projects" handler={Projects}/>
     <Route name="tasks" handler={Header}/>
     <Route name="tasklogs" handler={Header}/>
 
