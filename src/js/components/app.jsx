@@ -29,18 +29,20 @@ var App = React.createClass({
       <Link to="login">Sign in</Link>;
     return (
       <div>
-        <ul>
-          <li>{loginOrOut}</li>
-
-          <li><Link to="clients">Clients</Link></li>
-          <li><Link to="projects">Projects</Link></li>
-          <li><Link to="tasks">Tasks</Link></li>
-          <li><Link to="tasklogs">TaskLogs</Link></li>
-
-          <li><Link to="about">About</Link></li>
-          <li><Link to="header">Header</Link></li>
-          <li><Link to="dashboard">Dashboard</Link> (authenticated)</li>
-        </ul>
+        <nav className='navbar navbar-inverse'>
+          <div className="navbar-header">
+            <a className="navbar-brand" href="#">TLoger</a>
+          </div>        
+          <div className='collapse navbar-collapse'>
+            <ul className='nav navbar-nav'>
+              <li><Link to="clients">Clients</Link></li>
+              <li><Link to="projects">Projects</Link></li>
+              <li><Link to="tasks">Tasks</Link></li>
+              <li><Link to="tasklogs">TaskLogs</Link></li>
+              <li><Link to="about">About</Link></li>
+            </ul>
+          </div>
+        </nav>
         <RouteHandler/>
       </div>
     );
