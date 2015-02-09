@@ -7,6 +7,9 @@ var ClientForm = require('./client-form.jsx');
 
 var Component =
   React.createClass({
+      saveClient: function(client) {
+        console.log(client);
+      },
       componentDidMount: function() {
           appActions.getAllClients();
           this.unsubscribe = ClientStore.listen(this.fetchedClientsList);
@@ -26,7 +29,7 @@ var Component =
       render: function() {
         return (
             <div>
-              <ClientForm />
+              <ClientForm onSave={this.saveClient}/>
               <br/><br/>
               <ClientsTable clients={this.state.clients} />
             </div>
