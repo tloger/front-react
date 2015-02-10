@@ -8,11 +8,16 @@ var ClientForm = require('./client-form.jsx');
 var Component =
   React.createClass({
       saveClient: function(client) {
-        console.log(client);
+        appActions.saveClient(client);
+        //this.unsubscribe2 = ClientStore.listen(this.saveClientResponse);
       },
       componentDidMount: function() {
           appActions.getAllClients();
           this.unsubscribe = ClientStore.listen(this.fetchedClientsList);
+      },
+      saveClientResponse: function(result) {
+        //this.unsubscribe2();
+        appActions.getAllClients();
       },
       fetchedClientsList: function(result) {
         this.setState({
@@ -20,7 +25,7 @@ var Component =
         });
       },
       componentWillUnmount: function() {
-          this.unsubscribe();
+          this.unsubscribe();          
       },
       getInitialState: function() {
         return {clients: []};

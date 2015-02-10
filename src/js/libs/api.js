@@ -33,6 +33,7 @@ var api = {
           deferred.reject('error');
         }
       });
+    return deferred.promise;
   }
 }
 
