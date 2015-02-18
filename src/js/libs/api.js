@@ -34,7 +34,24 @@ var api = {
         }
       });
     return deferred.promise;
+  },
+
+  doDelete: function(url) {
+    var deferred = q.defer();
+    request
+      .del(config.API_HOST + url)
+      .set('Accept', 'application/json')
+      .end(function(res) {
+        if (res.ok) {
+          console.log('result from get: ', JSON.parse(res.text));
+          deferred.resolve(JSON.parse(res.text));
+        } else {
+          deferred.reject('error');
+        }
+      });
+    return deferred.promise;
   }
+
 }
 
 module.exports = api;

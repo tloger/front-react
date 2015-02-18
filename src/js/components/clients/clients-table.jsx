@@ -3,11 +3,15 @@ var React = require('react');
 var ClientRow = require('./client-row.jsx');
 
 var ClientsTable = React.createClass({
+    propTypes: {
+      editClicked: React.PropTypes.func.isRequired,
+      deleteClicked: React.PropTypes.func.isRequired,
+    },      
     editClicked: function(client) {
-      console.log(client);
+      this.props.editClicked(client);
     },
     deleteClicked: function(client) {
-      console.log(client);
+      this.props.deleteClicked(client);
     },
     render: function() {
         var rows = [];

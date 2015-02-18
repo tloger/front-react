@@ -4,21 +4,21 @@ var React = require('react');
 var Client = React.createClass({
 
   propTypes: {
-    onSave: React.PropTypes.func.isRequired,
-    client: React.PropTypes.object
+    onSave: React.PropTypes.func.isRequired
   },
   getInitialState: function() {
-    var client = {client:{name: ''}};
-    if(this.props.client) {
-      client = this.props.client;
-    }
-    return client;
+    return {client:{name: ''}};
   },
   handleChange: function(event) {
-    this.setState({client:{name: event.target.value}});
+    this.state.client.name = event.target.value;
+    this.setState({client: this.state.client});
   },
   saveClick: function(event) {
-    this.props.onSave(this.state.client);
+    if(this.state.client.name != '') {
+      this.props.onSave(this.state.client);  
+    } else {
+
+    }
   },
   cancelClick: function(event) {
     this.setState({client:{name: ''}});
