@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 var React = require('react');
-var appActions = require('../../actions');
+var appActions = require('../../actions/actions.js');
 var ClientStore = require('../../stores/client-store');
 var ClientsTable = require('./clients-table.jsx');
 var ClientForm = require('./client-form.jsx');
@@ -8,7 +8,6 @@ var ClientForm = require('./client-form.jsx');
 var Component =
   React.createClass({
       saveClient: function(client) {
-        console.log(client);
         appActions.saveClient(client);
         //this.unsubscribe2 = ClientStore.listen(this.saveClientResponse);
       },

@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 var React = require('react');
-var appActions = require('../../actions');
+var appActions = require('../../actions/actions.js');
 var TaskLogStore = require('../../stores/tasklog-store');
 var TaskLogsTable = require('./tasklogs-table.jsx');
 

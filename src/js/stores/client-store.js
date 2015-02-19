@@ -1,13 +1,13 @@
 var Reflux = require('reflux');
 var api = require('../libs/api');
-var appActions = require('../actions');
+var AppActions = require('../actions/actions.js');
 
 var clientStore = Reflux.createStore({
 
   init: function() {
-    this.listenTo(appActions.getAllClients, this.getAllClients);
-    this.listenTo(appActions.saveClient, this.saveClient);
-    this.listenTo(appActions.deleteClient, this.deleteClient);
+    this.listenTo(AppActions.getAllClients, this.getAllClients);
+    this.listenTo(AppActions.saveClient, this.saveClient);
+    this.listenTo(AppActions.deleteClient, this.deleteClient);
   },
 
   getAllClients: function() {

@@ -1,6 +1,6 @@
 var Reflux = require('reflux');
 var Api = require('../libs/api');
-var AppActions = require('../actions');
+var AppActions = require('../actions/actions.js');
 
 var TaskStore = Reflux.createStore({
 
