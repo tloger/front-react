@@ -6,6 +6,7 @@ var ProjectRow = React.createClass({
         return (
             <tr>
                 <td>{this.props.project.name}</td>
+                <td>{this.props.project.clientId}</td>
                 <td>
                   <button className='btn btn-primary btn-sm'>Edit</button>
                   &nbsp;&nbsp;

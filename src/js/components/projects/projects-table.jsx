@@ -13,6 +13,7 @@ var ProjectsTable = React.createClass({
                 <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Client</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
