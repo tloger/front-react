@@ -1,5 +1,6 @@
 /** @jsx React.DOM */
 var React = require('react');
+var ClientCombo = require('./client-combo.jsx');
 
 var ProjectForm = React.createClass({
   render: function() {
@@ -7,9 +8,7 @@ var ProjectForm = React.createClass({
       <div className='form-inline'>
         <input type="text" className="form-control" placeholder='Project Name' />
         &nbsp;&nbsp;
-        <select className='form-control'>
-          <option>None</option>
-        </select>
+        <ClientCombo clients={this.props.clients} />
         &nbsp;&nbsp;
         <button className='btn btn-success btn-sm'>Save</button>
          &nbsp;&nbsp;
