@@ -27,7 +27,7 @@ var api = {
       .set('Accept', 'application/json')
       .end(function(res) {
         if (res.ok) {
-          console.log('result from get: ', JSON.parse(res.text));
+          console.log('result from post: ', JSON.parse(res.text));
           deferred.resolve(JSON.parse(res.text));
         } else {
           deferred.reject('error');
@@ -40,10 +40,9 @@ var api = {
     var deferred = q.defer();
     request
       .del(config.API_HOST + url)
-      .set('Accept', 'application/json')
       .end(function(res) {
         if (res.ok) {
-          console.log('result from get: ', JSON.parse(res.text));
+          console.log('result from delete: ', JSON.parse(res.text));
           deferred.resolve(JSON.parse(res.text));
         } else {
           deferred.reject('error');
