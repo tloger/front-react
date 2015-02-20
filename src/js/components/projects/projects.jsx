@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 var React = require('react');
-var appActions = require('../../actions/actions.js');
+var AppActions = require('../../actions/actions.js');
 var ProjectStore = require('../../stores/project-store');
 var ClientStore = require('../../stores/client-store');
 var ProjectsTable = require('./projects-table.jsx');
@@ -9,16 +9,18 @@ var ProjectForm = require('./project-form.jsx');
 var Component =
   React.createClass({
       componentDidMount: function() {
-          appActions.getAllProjects();
-          appActions.getAllClients();
+          AppActions.getAllProjects();
+          AppActions.getAllClients();
           this.unsubscribe = ProjectStore.listen(this.fetchedProjectsList);
           this.unsubscribe2 = ClientStore.listen(this.fetchedClientsList);
       },
       fetchedClientsList: function(result) {
-        console.log(result);
         this.setState({
           clients: result.data
         });
+      },
+      saveProject: function(project) {
+        AppActions.saveProject(project);
       },      
       fetchedProjectsList: function(result) {
         this.setState({
@@ -32,13 +34,19 @@ var Component =
       getInitialState: function() {
         return {projects: [], clients: []};
       },
+      editClicked: function(project) {
+        console.log(project);
+      },
+      deleteClicked: function(project) {
+        console.log(project);
+      },
 
       render: function() {
         return (
             <div>
-              <ProjectForm clients={this.state.clients} />
+              <ProjectForm clients={this.state.clients} onSave={this.saveProject} />
               <br/><br/>
-              <ProjectsTable projects={this.state.projects} />
+              <ProjectsTable editClicked={this.editClicked} deleteClicked={this.deleteClicked} projects={this.state.projects} />
             </div>
         )
     }
