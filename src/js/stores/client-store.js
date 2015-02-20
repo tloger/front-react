@@ -1,5 +1,5 @@
 var Reflux = require('reflux');
-var api = require('../libs/api');
+var Api = require('../libs/api');
 var AppActions = require('../actions/actions.js');
 
 var clientStore = Reflux.createStore({
@@ -10,25 +10,33 @@ var clientStore = Reflux.createStore({
     this.listenTo(AppActions.deleteClient, this.deleteClient);
   },
 
+  getInitialState: function() {
+    return this.list = [];
+  },
+
+  updateList: function(list) {
+    this.list = list;
+    this.trigger(list);
+  },
+
   getAllClients: function() {
     var self = this;
-    api.doGet('clients').then(function(result) {
-      self.trigger(result);
-      console.log(self);
+    Api.doGet('clients').then(function(result) {
+      self.updateList(result);
     });
   },
 
   saveClient: function(client) {
     var self = this;
-    api.doPost('clients', client).then(function(result) {
-      self.trigger(result);
+    Api.doPost('clients', client).then(function(result) {
+      self.getAllClients();
     });
   },
 
   deleteClient: function(client) {
     var self = this;
-    api.doDelete('clients/' + client.id).then(function(result) {
-      self.trigger(result);
+    Api.doDelete('clients/' + client.id).then(function(result) {
+      self.getAllClients();
     });
   }
 
