@@ -36,8 +36,8 @@ var ProjectStore = Reflux.createStore({
 
   deleteProject: function(project) {
     var self = this;
-    Api.doDelete('project/' + project.id).then(function(result) {
-      self.getAllClients();
+    Api.doDelete('projects/' + project.id).then(function(result) {
+      self.getAllProjects();
     });
   }
 

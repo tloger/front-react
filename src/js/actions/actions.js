@@ -9,7 +9,6 @@ var appActions = Reflux.createActions([
   'saveProject',
   'deleteProject',
 
-
   'getAllTasks',
 ])
 

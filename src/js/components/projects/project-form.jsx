@@ -5,7 +5,8 @@ var ClientCombo = require('./client-combo.jsx');
 var ProjectForm = React.createClass({
 
   propTypes: {
-    onSave: React.PropTypes.func.isRequired
+    onSave: React.PropTypes.func.isRequired,
+    selectedClient: React.PropTypes.object
   },
   getInitialState: function() {
     return {project:{name: ''}};
@@ -30,7 +31,7 @@ var ProjectForm = React.createClass({
       <div className='form-inline'>
         <input type="text" className="form-control" placeholder='Project Name' value={name} onChange={this.handleChange} />
         &nbsp;&nbsp;
-        <ClientCombo clients={this.props.clients} />
+        <ClientCombo selectedClient={this.props.selectedClient} clients={this.props.clients} />
         &nbsp;&nbsp;
         <button className='btn btn-success btn-sm' onClick={this.saveClick}>Save</button>
          &nbsp;&nbsp;

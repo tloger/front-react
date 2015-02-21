@@ -26,6 +26,7 @@ var Component =
         this.setState({
           projects: result.data
         });
+        this.refs.projectForm.setState({project:{}});
       },
       componentWillUnmount: function() {
           this.unsubscribe();
@@ -35,16 +36,17 @@ var Component =
         return {projects: [], clients: []};
       },
       editClicked: function(project) {
-        console.log(project);
+        this.refs.projectForm.setState({project:project});
+        //this.refs.projectForm.selectedClient = 
       },
       deleteClicked: function(project) {
-        console.log(project);
+        AppActions.deleteProject(project);
       },
 
       render: function() {
         return (
             <div>
-              <ProjectForm clients={this.state.clients} onSave={this.saveProject} />
+              <ProjectForm ref="projectForm" clients={this.state.clients} onSave={this.saveProject} />
               <br/><br/>
               <ProjectsTable editClicked={this.editClicked} deleteClicked={this.deleteClicked} projects={this.state.projects} />
             </div>

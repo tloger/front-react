@@ -12,8 +12,15 @@ var OptionRow = React.createClass({
 });
 
 var ClientCombo = React.createClass({
+    propTypes: {
+      selectedClient: React.PropTypes.object
+    },
+    getInitialState: function() {
+      return {client:{name: ''}};
+    },
     optionChanged: function() {
-      console.log(this);
+      console.log(this.state);
+      console.log(document.getElementById('combo').index);
     },
     render: function() {
         var rows = [];
@@ -21,8 +28,8 @@ var ClientCombo = React.createClass({
             rows.push(<OptionRow index={index} client={client} />);
         });
         return (
-            <select onChange={this.optionChanged} ref="sel">
-              <option>None</option>
+            <select onChange={this.optionChanged} id="combo" ref="sel">
+              <option value=''>None</option>
               {rows}
             </select>
         );
