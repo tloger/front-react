@@ -30,12 +30,19 @@ gulp.task('copy', function() {
     }))
     .pipe(livereload());
 
+  gulp.src('src/css/*.css')
+    .pipe(gulp.dest('dist/css'))
+    .pipe(reload({
+      stream: true
+    }))
+    .pipe(livereload());
+
   gulp.src('src/bower_components/**/*')
     .pipe(gulp.dest('dist/bower_components'))
     .pipe(reload({
       stream: true
     }))
-    .pipe(livereload());    
+    .pipe(livereload());
 });
 
 gulp.task('server', ['clean', 'copy'], function() {
