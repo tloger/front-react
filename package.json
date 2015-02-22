@@ -21,6 +21,7 @@
     "fixed-data-table": "^0.1.0",
     "gulp-connect": "^2.2.0",
     "gulp-livereload": "^3.6.0",
+    "is_js": "^0.6.0",
     "object-assign": "^2.0.0",
     "q": "^1.1.2",
     "react-bootstrap": "^0.13.3",
