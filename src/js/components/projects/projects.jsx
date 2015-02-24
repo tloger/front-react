@@ -15,6 +15,7 @@ var Component =
           this.unsubscribe2 = ClientStore.listen(this.fetchedClientsList);
       },
       fetchedClientsList: function(result) {
+        result.data.unshift({name:'None'});
         this.setState({
           clients: result.data
         });
@@ -26,7 +27,8 @@ var Component =
         this.setState({
           projects: result.data
         });
-        this.refs.projectForm.setState({project:{}});
+        //this.refs.projectForm.setState({project:{}});
+        this.refs.projectForm.cancelClick();
       },
       componentWillUnmount: function() {
           this.unsubscribe();
@@ -37,12 +39,10 @@ var Component =
       },
       editClicked: function(project) {
         this.refs.projectForm.setState({project:project});
-        //this.refs.projectForm.selectedClient = 
       },
       deleteClicked: function(project) {
         AppActions.deleteProject(project);
       },
-
       render: function() {
         return (
             <div>

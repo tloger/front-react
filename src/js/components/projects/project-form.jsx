@@ -11,7 +11,7 @@ var ProjectForm = React.createClass({
     selectedClient: React.PropTypes.object
   },
   getInitialState: function() {
-    return {project:{name: ''}};
+    return {project:{}};
   },  
   handleChange: function(event) {
     this.state.project.name = event.target.value;
@@ -22,7 +22,7 @@ var ProjectForm = React.createClass({
       if(this.selectedClient) {
         this.state.project.clientId = this.selectedClient.id;
       }
-      this.props.onSave(this.state.project);  
+      this.props.onSave(this.state.project);
     } else {
 
     }
@@ -31,7 +31,10 @@ var ProjectForm = React.createClass({
     this.selectedClient = val;
   },
   cancelClick: function(event) {
-    this.setState({project:{name: ''}});
+    this.setState({project:{}});    
+    this.refs.clientCombo.setState({
+      value: this.props.clients[0]
+    });
   },
   render: function() {
     var name = this.state.project.name;
@@ -41,7 +44,7 @@ var ProjectForm = React.createClass({
           <input type="text" className="form-control" placeholder='Project Name' value={name} onChange={this.handleChange} />
         </div>
         <div className="col-sm-3">
-          <DropdownList onSelect={this.selectChanged} data={this.props.clients} valueField='id' textField='name' />
+          <DropdownList onChange={this.selectChanged} data={this.props.clients} valueField='id' textField='name' ref="clientCombo" />
         </div>
         <div className="col-sm-2 pull-right">
           <button className='btn btn-success btn-sm' onClick={this.saveClick}>Save</button>
