@@ -2,8 +2,8 @@
 var React = require('react');
 var AppActions = require('../../actions/actions.js');
 var ClientStore = require('../../stores/client-store');
-var ClientsTable = require('./clients-table.jsx');
-var ClientForm = require('./client-form.jsx');
+var ClientsTable = React.createFactory(require('./clients-table.jsx'));
+var ClientForm = React.createFactory(require('./client-form.jsx'));
 
 var Component =
   React.createClass({

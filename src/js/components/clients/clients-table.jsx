@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 var React = require('react');
-var ClientRow = require('./client-row.jsx');
+var ClientRow = React.createFactory(require('./client-row.jsx'));
 
 var ClientsTable = React.createClass({
     propTypes: {
@@ -18,7 +18,7 @@ var ClientsTable = React.createClass({
         var self = this;
 
         this.props.clients.forEach(function(client) {
-            rows.push(<ClientRow editClicked={self.editClicked} deleteClicked={self.deleteClicked} client={client} key={client._id} />);
+            rows.push(<ClientRow editClicked={self.editClicked} deleteClicked={self.deleteClicked} client={client} key={client.id} />);
         });
         return (
             <table className="table table-bordered">
