@@ -4,6 +4,7 @@ var ClientCombo = require('./client-combo.jsx');
 var ReactWidgets = require('react-widgets');
 var DropdownList = ReactWidgets.DropdownList;
 var is = require('is_js');
+var _ = require('lodash');
 
 var ProjectForm = React.createClass({
   propTypes: {
@@ -16,6 +17,13 @@ var ProjectForm = React.createClass({
   handleChange: function(event) {
     this.state.project.name = event.target.value;
     this.setState({project: this.state.project});
+  },
+  componentWillUpdate: function(nextProps, nextState) {
+    if(nextState.project.client) {
+      this.refs.clientCombo.setState({
+        value: _.find(this.props.clients, {id:nextState.project.client.id})
+      });
+    }
   },
   saveClick: function(event) {
     if(is.string(this.state.project.name)) {
@@ -31,7 +39,7 @@ var ProjectForm = React.createClass({
     this.selectedClient = val;
   },
   cancelClick: function(event) {
-    this.setState({project:{}});    
+    this.setState({project:{}});
     this.refs.clientCombo.setState({
       value: this.props.clients[0]
     });

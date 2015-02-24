@@ -17,7 +17,7 @@ var ProjectRow = React.createClass({
         return (
             <tr>
                 <td>{this.props.project.name}</td>
-                <td>{this.props.project.clientId}</td>
+                <td>{this.props.project.client.name}</td>
                 <td>
                   <button onClick={this.editClicked} className='btn btn-primary btn-sm'>Edit</button>
                   &nbsp;&nbsp;

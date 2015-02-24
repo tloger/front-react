@@ -27,7 +27,6 @@ var Component =
         this.setState({
           projects: result.data
         });
-        //this.refs.projectForm.setState({project:{}});
         this.refs.projectForm.cancelClick();
       },
       componentWillUnmount: function() {

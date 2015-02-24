@@ -17,7 +17,7 @@ var ProjectsTable = React.createClass({
         var rows = [];
         var self = this;
         this.props.projects.forEach(function(project) {
-            rows.push(<ProjectRow editClicked={self.editClicked} deleteClicked={self.deleteClicked} project={project} />);
+            rows.push(<ProjectRow editClicked={self.editClicked} deleteClicked={self.deleteClicked} project={project} key={project.id} />);
         });
         return (
             <table className="table table-bordered">
