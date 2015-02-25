@@ -1,8 +1,7 @@
 /** @jsx React.DOM */
 var React = require('react');
-var ClientCombo = require('./client-combo.jsx');
 var ReactWidgets = require('react-widgets');
-var DropdownList = ReactWidgets.DropdownList;
+var DropdownList = React.createFactory(ReactWidgets.DropdownList);
 var is = require('is_js');
 var _ = require('lodash');
 
@@ -19,11 +18,17 @@ var ProjectForm = React.createClass({
     this.setState({project: this.state.project});
   },
   componentWillUpdate: function(nextProps, nextState) {
+    
     if(nextState.project.client) {
-      this.refs.clientCombo.setState({
-        value: _.find(this.props.clients, {id:nextState.project.client.id})
-      });
+      this.selectedClient = _.find(this.props.clients, {id:nextState.project.client.id})
     }
+    if(this.selectedClient == undefined) {
+      this.selectedClient = this.props.clients[0];  
+    }
+    this.refs.clientCombo.setState({
+      value: this.selectedClient
+    });
+
   },
   saveClick: function(event) {
     if(is.string(this.state.project.name)) {
@@ -32,7 +37,10 @@ var ProjectForm = React.createClass({
       }
       this.props.onSave(this.state.project);
     } else {
-
+      this.selectedClient = this.props.clients[0];
+      this.refs.clientCombo.setState({
+        value: this.selectedClient
+      });
     }
   },
   selectChanged: function(val) {
@@ -40,8 +48,9 @@ var ProjectForm = React.createClass({
   },
   cancelClick: function(event) {
     this.setState({project:{}});
+    this.selectedClient = this.props.clients[0];
     this.refs.clientCombo.setState({
-      value: this.props.clients[0]
+      value: this.selectedClient
     });
   },
   render: function() {

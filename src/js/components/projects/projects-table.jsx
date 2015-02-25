@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 var React = require('react');
-var ProjectRow = require('./project-row.jsx');
+var ProjectRow = React.createFactory(require('./project-row.jsx'));
 
 var ProjectsTable = React.createClass({
     propTypes: {

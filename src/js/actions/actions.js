@@ -10,6 +10,8 @@ var appActions = Reflux.createActions([
   'deleteProject',
 
   'getAllTasks',
+  'saveTask',
+  'deleteTask',
 ])
 
 module.exports = appActions;

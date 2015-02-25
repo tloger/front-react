@@ -25,11 +25,7 @@ var routes = (
     <Route name="projects" handler={Projects}/>
     <Route name="tasks" handler={Tasks}/>
     <Route name="tasklogs" handler={TaskLogs}/>
-    <Route name="about" handler={About}/>
-
-    <Route name="login" handler={Login}/>
-    <Route name="logout" handler={Logout}/>
-    
+    <Route name="about" handler={About}/>    
   </Route>
 );
 
